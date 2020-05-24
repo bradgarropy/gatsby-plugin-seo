@@ -7,13 +7,8 @@ import Facebook from "./Facebook"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 
 const SEO = ({title = "", description = "", image = ""}) => {
-    console.log("INSIDE SEO COMPONENT")
-
     const {pathname} = useLocation()
-    console.log(pathname)
-
     const meta = useSiteMetadata()
-    console.log("meta", meta)
 
     const defaultTitle = meta.title
     const defaultTwitterImage = `${meta.url}/twitter.png`
