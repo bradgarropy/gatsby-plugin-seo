@@ -37,6 +37,16 @@ module.exports = {
 }
 ```
 
+Some fields in `siteMetadata` are also required.
+
+| Name          | Description                          |
+| ------------- | ------------------------------------ |
+| `url`         | Base url of the website.             |
+| `title`       | Document title shown in the browser. |
+| `description` | Meta description of the page.        |
+| `keywords`    | Keywords describing the page.        |
+| `twitter`     | Twitter handle, without the `@`.     |
+
 ### 🥑 Usage
 
 ```javascript
