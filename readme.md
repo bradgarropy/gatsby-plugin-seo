@@ -8,7 +8,7 @@
     <img alt="npm" src="https://img.shields.io/npm/dt/@bradgarropy/gatsby-plugin-seo?style=flat-square">
 </a>
 
-_SEO plugin for Gastby. Supports Facebook, Twitter, Open Graph, and `meta` tags._
+_SEO plugin for [Gastby][gatsby]. Supports [Facebook][facebook], [Twitter][twitter], [Open Graph][og], and `meta` tags._
 
 ### 📦 Installation
 
@@ -85,6 +85,10 @@ If you have any trouble, definitely [open an issue][issue] and I'll take a look.
 
 If all else fails, you can ask me directly on [Twitter][twitter] or my [AMA][ama].
 
+[gatsby]: https://gatsbyjs.org
+[facebook]: https://www.facebook.com/profile.php?id=7933107
+[twitter]: https://twitter.com/bradgarropy
+[og]: https://ogp.me
 [npm]: https://npmjs.com
 [issue]: https://github.com/bradgarropy/gatsby-plugin-seo/issues
 [twitter]: https://twitter.com/bradgarropy
