@@ -57,7 +57,7 @@ static/
 
 ### 🥑 Usage
 
-This plugin exports an `<SEO>` component. It can be used without any `props`.
+This plugin exports an `<SEO>` component that can be used without any `props`.
 
 ```javascript
 import SEO from "@bradgarropy/gatsby-plugin-seo"
