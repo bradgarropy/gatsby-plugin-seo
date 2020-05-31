@@ -47,13 +47,25 @@ Some fields in `siteMetadata` are also required.
 | `keywords`    | Keywords describing the page.        |
 | `twitter`     | Twitter handle, without the `@`.     |
 
+This plugin also expects the default social media cards to be availabe at `/facebook.png` and `/twitter.png`. This can be accomplished by placing these images in the `static` directory.
+
+```
+static/
+  |  facebook.png
+  |  twitter.png
+```
+
 ### 🥑 Usage
+
+This plugin exports an `<SEO>` component. It can be used without any `props`.
 
 ```javascript
 import SEO from "@bradgarropy/gatsby-plugin-seo"
 
 const App = () => <SEO />
 ```
+
+If you want to customize the SEO properties on each page, the `<SEO>` component accepts three `props`: `title`, `description`, and `image`.
 
 ```javascript
 import SEO from "@bradgarropy/gatsby-plugin-seo"
@@ -67,4 +79,12 @@ const App = () => (
 )
 ```
 
-[npm]: https://npmjs.com
+### ❔ Questions
+
+If you have any trouble, definitely [open an issue][issue] and I'll take a look.
+
+If all else fails, you can ask me directly on [Twitter][twitter] or my [AMA][ama].
+
+[issue]: https://github.com/bradgarropy/gatsby-plugin-seo/issues
+[twitter]: https://twitter.com/bradgarropy
+[ama]: https://bradgarropy.com/ama
