@@ -1,11 +1,15 @@
 {
     "name": "@bradgarropy/gatsby-plugin-seo",
-    "version": "0.0.3",
-    "description": "<description>",
+    "version": "0.0.2",
+    "description": "🔎 gatsby-plugin-seo",
     "keywords": [
         "gatsby",
         "gatsby-plugin",
-        "seo"
+        "seo",
+        "facebook",
+        "twitter",
+        "open graph",
+        "meta"
     ],
     "homepage": "https://github.com/bradgarropy/gatsby-plugin-seo#readme",
     "bugs": {
