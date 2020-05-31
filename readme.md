@@ -85,6 +85,7 @@ If you have any trouble, definitely [open an issue][issue] and I'll take a look.
 
 If all else fails, you can ask me directly on [Twitter][twitter] or my [AMA][ama].
 
+[npm]: https://npmjs.com
 [issue]: https://github.com/bradgarropy/gatsby-plugin-seo/issues
 [twitter]: https://twitter.com/bradgarropy
 [ama]: https://bradgarropy.com/ama
