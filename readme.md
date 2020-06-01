@@ -47,11 +47,12 @@ Some fields in `siteMetadata` are also required.
 | `keywords`    | Keywords describing the page.        |
 | `twitter`     | Twitter handle, without the `@`.     |
 
-This plugin also expects the default social media cards to be availabe at `/facebook.png` and `/twitter.png`. This can be accomplished by placing these images in the `static` directory.
+This plugin also expects the default social media cards and favicon to be availabe at `/facebook.png`, `/twitter.png`, and `/favicon.png`. This can be accomplished by placing these images in the `static` directory.
 
 ```
 static/
   |  facebook.png
+  |  favicon.png
   |  twitter.png
 ```
 
