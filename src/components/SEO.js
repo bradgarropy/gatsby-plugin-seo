@@ -11,17 +11,18 @@ const SEO = ({title = "", description = "", image = ""}) => {
     const meta = useSiteMetadata()
 
     const defaultTitle = meta.title
+    const defaultDescription = meta.description
     const defaultTwitterImage = `${meta.url}/twitter.png`
     const defaultFacebookImage = `${meta.url}/facebook.png`
 
     const seoImage = `${meta.url}${image}`
     const seoUrl = `${meta.url}${pathname}`
 
-    return (
+    return (    
         <>
             <Meta
                 title={title || defaultTitle}
-                description={description}
+                description={description || defaultDescription}
                 keywords={meta.keywords}
                 icon={`${meta.url}/favicon.png`}
             />
@@ -29,14 +30,14 @@ const SEO = ({title = "", description = "", image = ""}) => {
             <Facebook
                 url={seoUrl}
                 title={title || defaultTitle}
-                description={description}
+                description={description || defaultDescription}
                 image={image ? seoImage : defaultFacebookImage}
             />
 
             <Twitter
                 site={meta.twitter}
                 title={title || defaultTitle}
-                description={description}
+                description={description || defaultDescription}
                 image={image ? seoImage : defaultTwitterImage}
             />
         </>
