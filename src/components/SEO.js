@@ -18,7 +18,7 @@ const SEO = ({title = "", description = "", image = ""}) => {
     const seoImage = `${meta.url}${image}`
     const seoUrl = `${meta.url}${pathname}`
 
-    return (    
+    return (
         <>
             <Meta
                 title={title || defaultTitle}
