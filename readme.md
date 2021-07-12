@@ -49,10 +49,10 @@ Some fields in `siteMetadata` are also required.
 This plugin also expects the default social media cards and favicon to be availabe at `/facebook.png`, `/twitter.png`, and `/favicon.png`. This can be accomplished by placing these images in the `static` directory.
 
 ```
-static/
-  |  facebook.png
-  |  favicon.png
-  |  twitter.png
+static
+├── facebook.png
+├── favicon.png
+└── twitter.png
 ```
 
 ## 🥑 Usage
