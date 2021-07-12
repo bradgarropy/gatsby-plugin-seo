@@ -1,10 +1,11 @@
-import React from "react"
-import PropTypes from "prop-types"
 import {useLocation} from "@reach/router"
+import PropTypes from "prop-types"
+import React from "react"
+
+import useSiteMetadata from "../hooks/useSiteMetadata"
+import Facebook from "./Facebook"
 import Meta from "./Meta"
 import Twitter from "./Twitter"
-import Facebook from "./Facebook"
-import useSiteMetadata from "../hooks/useSiteMetadata"
 
 const SEO = ({title = "", description = "", image = ""}) => {
     const {pathname} = useLocation()
