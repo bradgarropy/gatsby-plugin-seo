@@ -23,7 +23,7 @@ const SEO = ({title = "", description = "", image = ""}) => {
         <>
             <Meta
                 title={title || defaultTitle}
-                description={description || defaultDescription}
+                description={description ?? defaultDescription}
                 keywords={meta.keywords}
                 icon={`${meta.url}/favicon.png`}
             />
@@ -31,14 +31,14 @@ const SEO = ({title = "", description = "", image = ""}) => {
             <Facebook
                 url={seoUrl}
                 title={title || defaultTitle}
-                description={description || defaultDescription}
+                description={description ?? defaultDescription}
                 image={image ? seoImage : defaultFacebookImage}
             />
 
             <Twitter
                 site={meta.twitter}
                 title={title || defaultTitle}
-                description={description || defaultDescription}
+                description={description ?? defaultDescription}
                 image={image ? seoImage : defaultTwitterImage}
             />
         </>
