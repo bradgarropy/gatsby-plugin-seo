@@ -1,45 +1,34 @@
-import {useLocation} from "@reach/router"
 import PropTypes from "prop-types"
 import React from "react"
 
-import useSiteMetadata from "../hooks/useSiteMetadata"
 import Facebook from "./Facebook"
 import Meta from "./Meta"
 import Twitter from "./Twitter"
 
-const SEO = ({title = "", description = "", image = ""}) => {
-    const {pathname} = useLocation()
-    const meta = useSiteMetadata()
-
-    const defaultTitle = meta.title
-    const defaultDescription = meta.description
-    const defaultTwitterImage = `${meta.url}/twitter.png`
-    const defaultFacebookImage = `${meta.url}/facebook.png`
-
-    const seoImage = `${meta.url}${image}`
-    const seoUrl = `${meta.url}${pathname}`
-
+const SEO = ({title, description, keywords, icon, facebook, twitter}) => {
     return (
         <>
             <Meta
-                title={title || defaultTitle}
-                description={description ?? defaultDescription}
-                keywords={meta.keywords}
-                icon={`${meta.url}/favicon.png`}
+                title={title}
+                description={description}
+                keywords={keywords}
+                icon={icon}
             />
 
             <Facebook
-                url={seoUrl}
-                title={title || defaultTitle}
-                description={description ?? defaultDescription}
-                image={image ? seoImage : defaultFacebookImage}
+                title={title}
+                description={description}
+                url={facebook?.url}
+                image={facebook?.image}
+                type={facebook?.type}
             />
 
             <Twitter
-                site={meta.twitter}
-                title={title || defaultTitle}
-                description={description ?? defaultDescription}
-                image={image ? seoImage : defaultTwitterImage}
+                title={title}
+                description={description}
+                image={twitter?.image}
+                site={twitter?.site}
+                card={twitter?.card}
             />
         </>
     )
@@ -48,7 +37,18 @@ const SEO = ({title = "", description = "", image = ""}) => {
 SEO.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
-    image: PropTypes.string,
+    keywords: PropTypes.arrayOf(PropTypes.string),
+    icon: PropTypes.string,
+    facebook: PropTypes.shape({
+        image: PropTypes.string,
+        type: PropTypes.string,
+        url: PropTypes.string,
+    }),
+    twitter: PropTypes.shape({
+        image: PropTypes.string,
+        card: PropTypes.string,
+        site: PropTypes.string,
+    }),
 }
 
 export default SEO

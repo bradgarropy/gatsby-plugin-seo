@@ -2,20 +2,18 @@ import PropTypes from "prop-types"
 import React from "react"
 import {Helmet} from "react-helmet"
 
-const Facebook = ({
-    url = "",
-    type = "website",
-    title = "",
-    description = "",
-    image = "",
-}) => {
+const Facebook = ({url, type, title, description, image}) => {
     return (
         <Helmet>
-            <meta property="og:url" content={url} />
-            <meta property="og:type" content={type} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={image} />
+            {url && <meta property="og:url" content={url} />}
+            {type && <meta property="og:type" content={type} />}
+            {title && <meta property="og:title" content={title} />}
+
+            {description && (
+                <meta property="og:description" content={description} />
+            )}
+
+            {image && <meta property="og:image" content={image} />}
         </Helmet>
     )
 }

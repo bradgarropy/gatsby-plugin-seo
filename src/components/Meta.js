@@ -2,14 +2,13 @@ import PropTypes from "prop-types"
 import React from "react"
 import {Helmet} from "react-helmet"
 
-const Meta = ({title = "", description = "", keywords = [], icon = ""}) => {
+const Meta = ({title, description, keywords, icon}) => {
     return (
         <Helmet>
-            <html lang="en" />
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <meta name="keywords" content={keywords.join(",")} />
-            <link rel="icon" type="image/png" href={icon} />
+            {title && <title>{title}</title>}
+            {description && <meta name="description" content={description} />}
+            {keywords && <meta name="keywords" content={keywords.join(", ")} />}
+            {icon && <link rel="icon" href={icon} />}
         </Helmet>
     )
 }
