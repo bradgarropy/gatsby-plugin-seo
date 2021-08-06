@@ -1,6 +1,5 @@
 import "./layout.css"
 
-import {graphql, useStaticQuery} from "gatsby"
 import PropTypes from "prop-types"
 import * as React from "react"
 
@@ -8,16 +7,6 @@ import SEO from "../../../."
 import Header from "./header"
 
 const Layout = ({children}) => {
-    const data = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `)
-
     return (
         <>
             <SEO
@@ -37,7 +26,7 @@ const Layout = ({children}) => {
                 }}
             />
 
-            <Header siteTitle={data.site.siteMetadata?.title || "Title"} />
+            <Header siteTitle="Header" />
 
             <div
                 style={{
