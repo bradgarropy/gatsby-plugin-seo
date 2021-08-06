@@ -3,6 +3,9 @@
 [![version][version-badge]][npm]
 [![downloads][downloads-badge]][npm]
 [![size][size-badge]][bundlephobia]
+[![github actions][github-actions-badge]][github-actions]
+[![coverage][codecov-badge]][codecov]
+[![typescript][typescript-badge]][typescript]
 [![contributing][contributing-badge]][contributing]
 [![contributors][contributors-badge]][contributors]
 [![discord][discord-badge]][discord]
@@ -144,6 +147,12 @@ All of the `SEO` props are optional. If a prop is not provided, the associated m
 [downloads-badge]: https://img.shields.io/npm/dt/@bradgarropy/http?style=flat-square
 [bundlephobia]: https://bundlephobia.com/result?p=@bradgarropy/gatsby-plugin-seo
 [size-badge]: https://img.shields.io/bundlephobia/minzip/@bradgarropy/http?style=flat-square
+[github-actions]: https://github.com/bradgarropy/gatsby-plugin-seo/actions
+[github-actions-badge]: https://img.shields.io/github/workflow/status/bradgarropy/gatsby-plugin-seo/%F0%9F%9A%80%20release?style=flat-square
+[codecov]: https://app.codecov.io/gh/bradgarropy/gatsby-plugin-seo
+[codecov-badge]: https://img.shields.io/codecov/c/github/bradgarropy/gatsby-plugin-seo?style=flat-square
+[typescript]: https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fgatsby-plugin-seo
+[typescript-badge]: https://img.shields.io/npm/types/@bradgarropy/gatsby-plugin-seo?style=flat-square
 [contributing]: https://github.com/bradgarropy/gatsby-plugin-seo/blob/master/contributing.md
 [contributing-badge]: https://img.shields.io/badge/PRs-welcome-success?style=flat-square
 [contributors]: #-contributors
