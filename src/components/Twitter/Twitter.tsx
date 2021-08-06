@@ -1,8 +1,15 @@
-import PropTypes from "prop-types"
-import React from "react"
+import {FC} from "react"
 import {Helmet} from "react-helmet"
 
-const Twitter = ({card, site, title, description, image}) => {
+type TwitterProps = {
+    title?: string
+    description?: string
+    image?: string
+    card?: string
+    site?: string
+}
+
+const Twitter: FC<TwitterProps> = ({card, site, title, description, image}) => {
     return (
         <Helmet>
             {card && <meta name="twitter:card" content={card} />}
@@ -18,12 +25,5 @@ const Twitter = ({card, site, title, description, image}) => {
     )
 }
 
-Twitter.propTypes = {
-    card: PropTypes.string,
-    site: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string,
-}
-
 export default Twitter
+export {TwitterProps}

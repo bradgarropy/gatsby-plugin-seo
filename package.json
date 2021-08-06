@@ -1,6 +1,6 @@
 {
     "name": "@bradgarropy/gatsby-plugin-seo",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "🔎 gatsby-plugin-seo",
     "keywords": [
         "gatsby",
@@ -21,37 +21,59 @@
         "email": "bradgarropy@gmail.com",
         "url": "https://bradgarropy.com"
     },
-    "main": "src/index.js",
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/types/index.d.ts",
     "bin": {},
     "repository": {
         "type": "git",
         "url": "https://github.com/bradgarropy/gatsby-plugin-seo"
     },
     "scripts": {
-        "start": "",
+        "start": "tsc --watch",
+        "build": "tsc",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "format": "prettier --check .",
         "format:fix": "prettier --write .",
-        "contributors": "all-contributors generate"
+        "test": "jest --passWithNoTests",
+        "test:watch": "jest --passWithNoTests --watch",
+        "contributors": "all-contributors generate",
+        "prepare": "tsc"
     },
     "dependencies": {
-        "prop-types": "^15.7.2",
         "react-helmet": "^6.1.0"
     },
     "devDependencies": {
         "@bradgarropy/eslint-config": "^1.1.0",
         "@bradgarropy/eslint-config-react": "^1.0.1",
+        "@bradgarropy/eslint-config-typescript": "^1.0.2",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^12.0.0",
+        "@types/jest": "^26.0.24",
+        "@types/react": "^17.0.16",
+        "@types/react-dom": "^17.0.9",
+        "@types/react-helmet": "^6.1.2",
+        "@typescript-eslint/eslint-plugin": "^4.9.1",
+        "@typescript-eslint/parser": "^4.9.1",
         "all-contributors-cli": "^6.20.0",
         "babel-eslint": "^10.1.0",
-        "eslint": "^7.32.0",
+        "eslint": "^7.15.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-react": "^7.21.5",
         "eslint-plugin-react-hooks": "^4.2.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
+        "husky": "^7.0.1",
+        "jest": "^27.0.6",
+        "lint-staged": "^11.1.2",
         "prettier": "^2.3.2",
-        "react": "^17.0.1"
+        "react": "^17.0.1",
+        "react-dom": "^17.0.2",
+        "ts-jest": "^27.0.4",
+        "typescript": "^4.1.2"
     },
     "peerDependencies": {}
 }

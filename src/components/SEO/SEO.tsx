@@ -1,11 +1,26 @@
-import PropTypes from "prop-types"
-import React from "react"
+import {FC} from "react"
 
-import Facebook from "./Facebook"
-import Meta from "./Meta"
-import Twitter from "./Twitter"
+import Facebook, {FacebookProps} from "../Facebook"
+import Meta from "../Meta"
+import Twitter, {TwitterProps} from "../Twitter"
 
-const SEO = ({title, description, keywords, icon, facebook, twitter}) => {
+type SEOProps = {
+    title?: string
+    description?: string
+    keywords?: string[]
+    icon?: string
+    facebook?: Pick<FacebookProps, "image" | "type" | "url">
+    twitter?: Pick<TwitterProps, "image" | "card" | "site">
+}
+
+const SEO: FC<SEOProps> = ({
+    title,
+    description,
+    keywords,
+    icon,
+    facebook,
+    twitter,
+}) => {
     return (
         <>
             <Meta
@@ -32,23 +47,6 @@ const SEO = ({title, description, keywords, icon, facebook, twitter}) => {
             />
         </>
     )
-}
-
-SEO.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    keywords: PropTypes.arrayOf(PropTypes.string),
-    icon: PropTypes.string,
-    facebook: PropTypes.shape({
-        image: PropTypes.string,
-        type: PropTypes.string,
-        url: PropTypes.string,
-    }),
-    twitter: PropTypes.shape({
-        image: PropTypes.string,
-        card: PropTypes.string,
-        site: PropTypes.string,
-    }),
 }
 
 export default SEO

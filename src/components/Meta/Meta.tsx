@@ -1,8 +1,14 @@
-import PropTypes from "prop-types"
-import React from "react"
+import {FC} from "react"
 import {Helmet} from "react-helmet"
 
-const Meta = ({title, description, keywords, icon}) => {
+type MetaProps = {
+    title?: string
+    description?: string
+    keywords?: string[]
+    icon?: string
+}
+
+const Meta: FC<MetaProps> = ({title, description, keywords, icon}) => {
     return (
         <Helmet>
             {title && <title>{title}</title>}
@@ -11,13 +17,6 @@ const Meta = ({title, description, keywords, icon}) => {
             {icon && <link rel="icon" href={icon} />}
         </Helmet>
     )
-}
-
-Meta.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    keywords: PropTypes.arrayOf(PropTypes.string),
-    icon: PropTypes.string,
 }
 
 export default Meta
