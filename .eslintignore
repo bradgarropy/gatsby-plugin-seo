@@ -6,10 +6,17 @@
 node_modules
 
 # build
+dist
 public
+
+# test
+coverage
 
 # host
 .netlify
 
 # secrets
 .env*
+
+# logs
+debug.log

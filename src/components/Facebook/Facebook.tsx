@@ -1,8 +1,21 @@
-import PropTypes from "prop-types"
-import React from "react"
+import {FC} from "react"
 import {Helmet} from "react-helmet"
 
-const Facebook = ({url, type, title, description, image}) => {
+type FacebookProps = {
+    url?: string
+    title?: string
+    description?: string
+    image?: string
+    type?: string
+}
+
+const Facebook: FC<FacebookProps> = ({
+    url,
+    type,
+    title,
+    description,
+    image,
+}) => {
     return (
         <Helmet>
             {url && <meta property="og:url" content={url} />}
@@ -18,12 +31,5 @@ const Facebook = ({url, type, title, description, image}) => {
     )
 }
 
-Facebook.propTypes = {
-    url: PropTypes.string,
-    type: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string,
-}
-
 export default Facebook
+export {FacebookProps}
