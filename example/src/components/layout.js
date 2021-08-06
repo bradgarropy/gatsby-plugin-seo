@@ -4,6 +4,7 @@ import {graphql, useStaticQuery} from "gatsby"
 import PropTypes from "prop-types"
 import * as React from "react"
 
+import SEO from "../../../."
 import Header from "./header"
 
 const Layout = ({children}) => {
@@ -19,6 +20,23 @@ const Layout = ({children}) => {
 
     return (
         <>
+            <SEO
+                title="My website"
+                description="A blog and portfolio"
+                keywords={["website", "blog", "portfolio"]}
+                icon="/favicon.ico"
+                facebook={{
+                    image: "/facebook.png",
+                    url: "https://website.com",
+                    type: "website",
+                }}
+                twitter={{
+                    image: "/twitter.png",
+                    site: "@bradgarropy",
+                    card: "summary",
+                }}
+            />
+
             <Header siteTitle={data.site.siteMetadata?.title || "Title"} />
 
             <div
