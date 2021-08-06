@@ -17,66 +17,96 @@ This package is installable from [npm][npm].
 npm install @bradgarropy/gatsby-plugin-seo
 ```
 
-## ⚙ Configuration
-
-Head over to the `gatsby-config.js` file and add `@bradgarropy/gatsby-plugin-seo` to the list of `plugins`.
-
-```javascript
-// gatsby-config.js
-
-module.exports = {
-    siteMetadata: {
-        url: "https://bradgarropy.com",
-        title: "Brad Garropy",
-        description: "🏡 My home on the web.",
-        keywords: ["gatsby", "portfolio"],
-        twitter: "bradgarropy",
-    },
-    plugins: ["@bradgarropy/gatsby-plugin-seo"],
-}
-```
-
-Some fields in `siteMetadata` are also required.
-
-| Name          | Description                          |
-| ------------- | ------------------------------------ |
-| `url`         | Base url of the website.             |
-| `title`       | Document title shown in the browser. |
-| `description` | Meta description of the page.        |
-| `keywords`    | Keywords describing the page.        |
-| `twitter`     | Twitter handle, without the `@`.     |
-
-This plugin also expects the default social media cards and favicon to be availabe at `/facebook.png`, `/twitter.png`, and `/favicon.png`. This can be accomplished by placing these images in the `static` directory.
-
-```
-static
-├── facebook.png
-├── favicon.png
-└── twitter.png
-```
-
 ## 🥑 Usage
 
-This plugin exports an `<SEO>` component that can be used without any `props`.
+To add a base set of SEO tags, create a [custom `<Layout/>` component][layout] and add the `<SEO/>` component there. The SEO tags will render for every route in your site.
 
-```javascript
-import SEO from "@bradgarropy/gatsby-plugin-seo"
+```jsx
+// .src/components/Layout.js
 
-const App = () => <SEO />
+import SEO from "@bradgarropy/next-seo"
+
+const Layout = ({children}) => {
+    return (
+        <>
+            <SEO title="My website" description="A blog and portfolio" />
+            {children}
+        </>
+    )
+}
+
+export default Layout
 ```
 
-If you want to customize the SEO properties on each page, the `<SEO>` component accepts three `props`: `title`, `description`, and `image`.
+If you want to override SEO tags on individual pages, use the `<SEO/>` component and only include the props that you want to update. For example, if you added `<SEO/>` in the `Layout.js` file as shown above, and then included `<SEO/>` in the `about.js` file as shown below, the `description` would be overwritten to be `Learn more about me`.
 
-```javascript
-import SEO from "@bradgarropy/gatsby-plugin-seo"
+```jsx
+// .src/pages/about.js
 
-const App = () => (
-    <SEO
-        title="Custom page title."
-        description="My custom description."
-        image="https://github.com/bradgarropy.png"
-    />
-)
+import SEO from "@bradgarropy/next-seo"
+import Layout from "../components/layout"
+
+const AboutPage = () => {
+    return (
+        <Layout>
+            <SEO description="Learn more about me" />
+            <h1>about</h1>
+        </Layout>
+    )
+}
+
+export default AboutPage
+```
+
+With this capability, you can create a default set of SEO tags, and then tailor certain properties on specific pages.
+
+## 📖 API Reference
+
+### `<SEO>`
+
+| Name             | Required | Example                            | Description                                                |
+| :--------------- | :------: | :--------------------------------- | :--------------------------------------------------------- |
+| `title`          | `false`  | `"My website"`                     | Page title.                                                |
+| `description`    | `false`  | `"A blog and portfolio"`           | Description of the page.                                   |
+| `keywords`       | `false`  | `["website", "blog", "portfolio"]` | Array of keywords.                                         |
+| `icon`           | `false`  | `"/favicon.ico"`                   | Tab icon url.                                              |
+| `facebook.image` | `false`  | `"/facebook.png"`                  | Facebook share image.                                      |
+| `facebook.url`   | `false`  | `"https://website.com"`            | Page URL.                                                  |
+| `facebook.type`  | `false`  | `"website"`                        | Type of resource. See all types [here][types].             |
+| `twitter.image`  | `false`  | `"/twitter.png"`                   | Twitter share image.                                       |
+| `twitter.site`   | `false`  | `"@bradgarropy"`                   | Twitter handle of publishing site.                         |
+| `twitter.card`   | `false`  | `"summary"`                        | Format of Twitter share card. See all types [here][cards]. |
+
+All of the `SEO` props are optional. If a prop is not provided, the associated meta tag will not be rendered.
+
+```jsx
+// renders no seo tags
+<SEO/>
+
+// renders all seo tags
+<SEO
+    title="My website"
+    description="A blog and portfolio"
+    keywords={["website", "blog", "portfolio"]}
+    icon="/favicon.ico"
+    facebook={{
+        image: "/facebook.png",
+        url: "https://website.com",
+        type: "website",
+    }}
+    twitter={{
+        image: "/twitter.png",
+        site: "@bradgarropy",
+        card: "summary",
+    }}
+/>
+
+// renders some seo tags
+<SEO
+    title="My blog"
+    description="Posts about technology"
+    keywords={["website", "blog", "technology"]}
+/>
 ```
 
 ## ❔ Questions
@@ -120,3 +150,4 @@ const App = () => (
 [contributors-badge]: https://img.shields.io/github/all-contributors/bradgarropy/gatsby-plugin-seo?style=flat-square
 [discord]: https://bradgarropy.com/discord
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
+[layout]: https://www.gatsbyjs.com/docs/recipes/pages-layouts#creating-a-layout-component

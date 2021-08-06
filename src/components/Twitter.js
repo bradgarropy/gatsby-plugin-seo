@@ -6,7 +6,7 @@ const Twitter = ({card, site, title, description, image}) => {
     return (
         <Helmet>
             {card && <meta name="twitter:card" content={card} />}
-            {site && <meta name="twitter:site" content={`@${site}`} />}
+            {site && <meta name="twitter:site" content={site} />}
             {title && <meta name="twitter:title" content={title} />}
 
             {description && (
