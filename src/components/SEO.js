@@ -18,17 +18,17 @@ const SEO = ({title, description, keywords, icon, facebook, twitter}) => {
             <Facebook
                 title={title}
                 description={description}
-                url={facebook.url}
-                image={facebook.image}
-                type={facebook.type}
+                url={facebook?.url}
+                image={facebook?.image}
+                type={facebook?.type}
             />
 
             <Twitter
                 title={title}
                 description={description}
-                image={twitter.image}
-                site={twitter.site}
-                card={twitter.card}
+                image={twitter?.image}
+                site={twitter?.site}
+                card={twitter?.card}
             />
         </>
     )
