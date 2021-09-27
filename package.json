@@ -9,7 +9,8 @@
         "facebook",
         "twitter",
         "open graph",
-        "meta"
+        "meta",
+        "hacktoberfest"
     ],
     "homepage": "https://github.com/bradgarropy/gatsby-plugin-seo#readme",
     "bugs": {
