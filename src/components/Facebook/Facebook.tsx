@@ -1,12 +1,26 @@
 import {FC} from "react"
 import {Helmet} from "react-helmet"
 
+type ObjectType =
+    | "music.song"
+    | "music.album"
+    | "music.playlist"
+    | "music.radio_station"
+    | "video.movie"
+    | "video.episode"
+    | "video.tv_show"
+    | "video.other"
+    | "article"
+    | "book"
+    | "profile"
+    | "website"
+
 type FacebookProps = {
     url?: string
     title?: string
     description?: string
     image?: string
-    type?: string
+    type?: ObjectType
 }
 
 const Facebook: FC<FacebookProps> = ({
@@ -32,4 +46,4 @@ const Facebook: FC<FacebookProps> = ({
 }
 
 export default Facebook
-export {FacebookProps}
+export type {FacebookProps, ObjectType}
