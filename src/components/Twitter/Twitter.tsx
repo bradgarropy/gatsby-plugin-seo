@@ -1,11 +1,13 @@
 import {FC} from "react"
 import {Helmet} from "react-helmet"
 
+type CardType = "summary" | "summary_large_image" | "app" | "player"
+
 type TwitterProps = {
     title?: string
     description?: string
     image?: string
-    card?: string
+    card?: CardType
     site?: string
 }
 
@@ -26,4 +28,4 @@ const Twitter: FC<TwitterProps> = ({card, site, title, description, image}) => {
 }
 
 export default Twitter
-export {TwitterProps}
+export type {CardType, TwitterProps}
