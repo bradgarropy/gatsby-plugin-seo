@@ -7,24 +7,28 @@ import SEO from "../../../."
 import Header from "./header"
 
 const Layout = ({children}) => {
+    const seo = {
+        title: "My website",
+        description: "A blog and portfolio",
+        keywords: ["website", "blog", "portfolio"],
+        icon: "/favicon.ico",
+        themeColor: "#663399",
+        colorScheme: "light",
+        facebook: {
+            image: "/facebook.png",
+            url: "https://website.com",
+            type: "website",
+        },
+        twitter: {
+            image: "/twitter.png",
+            site: "@bradgarropy",
+            card: "summary",
+        },
+    }
+
     return (
         <>
-            <SEO
-                title="My website"
-                description="A blog and portfolio"
-                keywords={["website", "blog", "portfolio"]}
-                icon="/favicon.ico"
-                facebook={{
-                    image: "/facebook.png",
-                    url: "https://website.com",
-                    type: "website",
-                }}
-                twitter={{
-                    image: "/twitter.png",
-                    site: "@bradgarropy",
-                    card: "summary",
-                }}
-            />
+            <SEO {...seo} />
 
             <Header siteTitle="Header" />
 
